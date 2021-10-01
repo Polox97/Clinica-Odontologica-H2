@@ -1,5 +1,7 @@
 package com.example.clinicaOdontologica.dto;
 
+import com.example.clinicaOdontologica.model.Odontologo;
+import com.example.clinicaOdontologica.model.Paciente;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,9 +10,9 @@ import java.sql.Time;
 
 @Getter @Setter
 public class TurnoDTO {
-    private Long id;
-    private Long id_paciente;
-    private Long id_odontologo;
-    private Date fecha;
-    private Time hora;
+    private Integer id;
+    private Paciente paciente;
+    private Odontologo odontologo;
+    private String fecha;
+    private String hora;
 }

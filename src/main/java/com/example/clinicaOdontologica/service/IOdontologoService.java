@@ -1,5 +1,5 @@
 package com.example.clinicaOdontologica.service;
-import com.example.clinicaOdontologica.model.OdontologoDTO;
+import com.example.clinicaOdontologica.dto.OdontologoDTO;
 
 import java.util.Collection;
 

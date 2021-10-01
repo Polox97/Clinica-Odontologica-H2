@@ -3,10 +3,7 @@ package com.example.clinicaOdontologica.model;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.sql.Date;
 import java.sql.Time;
 
@@ -16,12 +13,18 @@ import java.sql.Time;
 public class Turno {
     @Id
     @GeneratedValue
-    private Long id;
-    
-    private Long id_paciente;
-    private Long id_odontologo;
-    private Date fecha;
-    private Time hora;
+    private Integer id;
+
+    @ManyToOne
+    @JoinColumn(name="paciente_id", nullable = false)
+    private Paciente paciente;
+
+    @ManyToOne
+    @JoinColumn(name="odontologo_id", nullable = false)
+    private Odontologo odontologo;
+
+    private String fecha;
+    private String hora;
 
     public Turno(){}
 }

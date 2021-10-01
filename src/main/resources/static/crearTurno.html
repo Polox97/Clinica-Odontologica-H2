@@ -8,7 +8,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/post_paciente.js"></script>
+    <script type="text/javascript" src="js/post_turno.js"></script>
+    <script type="text/javascript" src="js/get_paciente.js"></script>
+    <script type="text/javascript" src="js/get_odontologo.js"></script>
 </head>
 <body>
     <header>
@@ -26,24 +28,37 @@
         </div>
     </header>
     <main>
-        <h1>Crear Paciente</h1>
+        <h1>Crear Odontólogo</h1>
         <div class="container">
-            <form id="crear_paciente">
+            <form id="crear_turno">
                 <div class="form-group">
-                    <label for="nombre">Nombre</label>
-                    <input id="nombre" type="text" name="nombre" class="form-control" required>
+                    <label for="paciente">Paciente</label>
+                    <select class="form-control" id="paciente" name="paciente"></select>
                 </div>
                 <div class="form-group">
-                    <label for="apellido">Apellido</label>
-                    <input id="apellido" type="text" name="apellido" class="form-control" required>
+                    <label for="paciente">Odontólogo</label>
+                    <select class="form-control" id="odontologo" name="odontologo"></select>
                 </div>
                 <div class="form-group">
-                    <label for="domicilio">Domicilio</label>
-                    <input id="domicilio" type="text" name="domicilio" class="form-control" required>
+                    <label for="fecha">Fecha</label>
+                    <input id="fecha" type="date" name="fecha" class="form-control" required>
                 </div>
                 <div class="form-group">
-                    <label for="dni">DNI</label>
-                    <input id="dni" type="text" name="dni" class="form-control" required>
+                    <label for="hora">Hora</label>
+                    <select id="hora" name="hora" class="form-control" required>
+                        <option value="08:00">08:00</option>
+                        <option value="09:00">09:00</option>
+                        <option value="10:00">10:00</option>
+                        <option value="11:00">11:00</option>
+                        <option value="12:00">12:00</option>
+                        <option value="13:00">13:00</option>
+                        <option value="14:00">14:00</option>
+                        <option value="15:00">15:00</option>
+                        <option value="16:00">16:00</option>
+                        <option value="17:00">17:00</option>
+                        <option value="18:00">18:00</option>
+                        <option value="19:00">19:00</option>
+                    </select>
                 </div>
                 <button type="submit" class="btn btn-primary">Crear</button>
             </form>

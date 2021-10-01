@@ -3,14 +3,14 @@ package com.example.clinicaOdontologica.dto;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.time.LocalDate;
+import java.sql.Date;
 
 @Getter @Setter
 public class PacienteDTO {
-    private Long id;
+    private Integer id;
     private String nombre;
     private String apellido;
     private String domicilio;
     private String dni;
-    private LocalDate fechaAlta;
+    private Date fechaAlta;
 }
