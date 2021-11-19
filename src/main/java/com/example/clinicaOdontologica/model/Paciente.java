@@ -1,11 +1,13 @@
 package com.example.clinicaOdontologica.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -14,7 +16,7 @@ import java.util.Set;
 public class Paciente {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private Long id;
 
     private String nombre;
     private String apellido;
@@ -25,8 +27,9 @@ public class Paciente {
     @CreationTimestamp
     private Date fechaAlta;
 
-    @OneToMany(mappedBy="paciente")
-    private Set<Turno> turno;
+    @OneToMany(mappedBy="paciente", fetch = FetchType.LAZY)
+    @JsonIgnore
+    private Set<Turno> turno = new HashSet<>();
 
     public Paciente() {}
 }

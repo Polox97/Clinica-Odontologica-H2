@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Odontología</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
@@ -14,18 +15,13 @@
 </head>
 <body>
     <header>
-        <img class="logo" src="" alt="">
-        <div class="menu">
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="pacientes.html">Pacientes</a></li>
-                <li><a href="crearPaciente.html">Nuevo Paciente</a></li>
-                <li><a href="odontologos.html">Odontólogos</a></li>
-                <li><a href="crearOdontologo.html">Nuevo Odontólogo</a></li>
-                <li><a href="turnos.html">Turnos</a></li>
-                <li><a href="crearTurno.html">Nuevo Turno</a></li>
-            </ul>
-        </div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <a class="navbar-brand" href="index.html">Inicio</a>
+            <a class="navbar-brand" href="pacientes.html">Pacientes</a>
+            <a class="navbar-brand" href="odontologos.html">Odontólogos</a>
+            <a class="navbar-brand" href="turnos.html">Turnos</a>
+            <a class="navbar-brand" href="/logout">Cerrar sesión</a>
+        </nav>
     </header>
     <main>
         <h1>Crear Odontólogo</h1>
@@ -42,8 +38,6 @@
                 <div class="form-group">
                     <label for="fecha">Fecha</label>
                     <input id="fecha" type="date" name="fecha" class="form-control" required>
-                </div>
-                <div class="form-group">
                     <label for="hora">Hora</label>
                     <select id="hora" name="hora" class="form-control" required>
                         <option value="08:00">08:00</option>

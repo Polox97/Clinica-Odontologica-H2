@@ -13,18 +13,25 @@ import java.sql.Time;
 public class Turno {
     @Id
     @GeneratedValue
-    private Integer id;
+    private Long id;
 
-    @ManyToOne
-    @JoinColumn(name="paciente_id", nullable = false)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
+    @JoinColumn(name="paciente_id")
     private Paciente paciente;
 
-    @ManyToOne
-    @JoinColumn(name="odontologo_id", nullable = false)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
+    @JoinColumn(name="odontologo_id")
     private Odontologo odontologo;
 
     private String fecha;
     private String hora;
 
     public Turno(){}
+
+    public Turno(Paciente paciente, Odontologo odontologo, String fecha, String hora) {
+        this.paciente = paciente;
+        this.odontologo = odontologo;
+        this.fecha = fecha;
+        this.hora = hora;
+    }
 }

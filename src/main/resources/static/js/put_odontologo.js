@@ -1,14 +1,14 @@
 window.addEventListener('load', function () {
-    const formulario = document.querySelector('#update_pelicula_form');
+    const formulario = document.querySelector('#update_odontologo_form');
     formulario.addEventListener('submit', function (event) {
-        let studentId = document.querySelector('#student_id').value;
+        let odontologoId = document.querySelector('#odontologo_id').value;
         const formData = {
-            id: document.querySelector('#student_id').value,
-            name: document.querySelector('#nombre').value,
-            lastname: document.querySelector('#apellido').value,
-
+            id: document.querySelector('#odontologo_id').value,
+            nombre: document.querySelector('#nombre').value,
+            apellido: document.querySelector('#apellido').value,
+            matricula: document.querySelector('#matricula').value
         };
-        const url = '/students';
+        const url = '/odontologos';
         const settings = {
             method: 'PUT',
             headers: {
@@ -19,17 +19,15 @@ window.addEventListener('load', function () {
           fetch(url,settings)
           .then(response => response.json())
           .then(data => {
-            let student = data;
-                    let studentString = "{firstname:" + student.name +
-                                                " ,lastname:" + student.lastname  + "}";
+            let odontologo = data;
                     let successAlert = '<div class="alert alert-success alert-dismissible">' + 
                                             '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
                                             '<strong> student = </strong> ' + data.toString();
                                         '</div>'
 
                     // change the updated data for pelicula table record
-                    $("#tr_" + studentId + " td.td_first_name").text(student.name);
-                    $("#tr_" + studentId + " td.td_address").text(student.lastname);
+                    $("#tr_" + odontologoId + " td.td_first_name").text(odontologo.nombre);
+                    $("#tr_" + odontologoId + " td.td_address").text(odontologo.apellido);
 
                     $("#response").empty();
                     $("#response").append(successAlert);
@@ -53,18 +51,19 @@ window.addEventListener('load', function () {
 
     function find(id) {
         
-          const url = '/students'+"/"+id;
+          const url = '/odontologos'+"/"+id;
           const settings = {
               method: 'GET'
           }
           fetch(url,settings)
           .then(response => response.json())
           .then(data => {
-              let student = data;
-              $("#student_id").val(student.id);
-              $("#nombre").val(student.name);
-              $("#apellido").val(student.lastname);
-              $("#div_pelicula_updating").css({"display": "block"});
+              let odontologo = data;
+              $("#odontologo_id").val(odontologo.id);
+              $("#nombre").val(odontologo.nombre);
+              $("#apellido").val(odontologo.apellido);
+              $("#matricula").val(odontologo.matricula);
+              $("#div_odontologo_updating").css({"display": "block"});
           }).catch(error => {
               console.log(error);
               alert("Error -> " + error);

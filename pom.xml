@@ -11,7 +11,7 @@
 	<groupId>com.example</groupId>
 	<artifactId>demohib2</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>demohib2</name>
+	<name>clinicaOdontologica</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
@@ -68,10 +68,15 @@
 			<artifactId>modelmapper</artifactId>
 			<version>2.4.3</version>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
         <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-core</artifactId>
-            <version>5.5.1</version>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
         </dependency>
 
     </dependencies>

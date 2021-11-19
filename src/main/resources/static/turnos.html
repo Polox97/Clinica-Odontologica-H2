@@ -5,58 +5,62 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Odontología</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/3f20a4f47f.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/get_turno.js"></script>
     <script type="text/javascript" src="js/delete_turno.js"></script>
+    <script type="text/javascript" src="js/put_turno.js"></script>
 </head>
 <body>
     <header>
-        <img class="logo" src="" alt="">
-        <div class="menu">
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="pacientes.html">Pacientes</a></li>
-                <li><a href="crearPaciente.html">Nuevo Paciente</a></li>
-                <li><a href="odontologos.html">Odontólogos</a></li>
-                <li><a href="crearOdontologo.html">Nuevo Odontólogo</a></li>
-                <li><a href="turnos.html">Turnos</a></li>
-                <li><a href="crearTurno.html">Nuevo Turno</a></li>
-            </ul>
-        </div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <a class="navbar-brand" href="index.html">Inicio</a>
+            <a class="navbar-brand" href="pacientes.html">Pacientes</a>
+            <a class="navbar-brand" href="odontologos.html">Odontólogos</a>
+            <a class="navbar-brand" href="turnos.html">Turnos</a>
+            <a class="navbar-brand" href="/logout">Cerrar sesión</a>
+        </nav>
     </header>
     <main>
-        <h1>Listado Turnos</h1>
-        <table id="turnosTable"> 
-            <thead>
-                <tr>
-                    <th>Paciente</th>
-                    <th>Doctor</th>
-                    <th>Fecha</th>
-                    <th>Hora</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
-        <div class="modal fade" id="delete-modal">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-    
-                    <!-- Modal Header -->
-                    <div class="modal-header">
-                        <h4 class="modal-title">Eliminada!</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
-    
-                    <!-- Modal body -->
-                    <div class="modal-body">
-                    </div>
-    
-                    <!-- Modal footer -->
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-danger" id="model-delete-btn">Eliminar</button>
+        <div class="container">
+            <h1>Listado Turnos</h1>
+            <a class="btn btn-primary" href="crearTurno.html">Crear nuevo turno</a>
+            <div class="row col-md-10 table-responsive">
+                <table class="table" id="turnosTable"> 
+                    <thead>
+                        <tr>
+                            <th scope="col">Paciente</th>
+                            <th scope="col">Doctor</th>
+                            <th scope="col">Fecha</th>
+                            <th scope="col">Hora</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <div class="modal fade" id="delete-modal">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+        
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Eliminada!</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+        
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                        </div>
+        
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                            <button type="button" class="btn btn-danger" id="model-delete-btn">Eliminar</button>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -27,7 +27,7 @@ public class OdontologoController {
     }
 
     @PutMapping()
-    public ResponseEntity<?> modifyStudent(@RequestBody OdontologoDTO o) {
+    public ResponseEntity<?> actualizarOdontologo(@RequestBody OdontologoDTO o) {
         odontologoService.actualizarOdontologo(o);
         return ResponseEntity.ok(HttpStatus.OK);
     }

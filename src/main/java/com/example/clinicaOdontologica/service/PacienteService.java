@@ -1,6 +1,7 @@
 package com.example.clinicaOdontologica.service;
 
 import com.example.clinicaOdontologica.dto.PacienteDTO;
+import com.example.clinicaOdontologica.model.Odontologo;
 import com.example.clinicaOdontologica.model.Paciente;
 import com.example.clinicaOdontologica.repository.IPacienteRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -32,7 +33,8 @@ public class PacienteService implements IPacienteService{
 
     @Override
     public void actualizarPaciente(PacienteDTO p) {
-
+        Paciente paciente = mapper.convertValue(p, Paciente.class);
+        pacienteRepository.save(paciente);
     }
 
     @Override

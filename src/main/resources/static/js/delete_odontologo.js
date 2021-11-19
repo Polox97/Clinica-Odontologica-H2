@@ -25,11 +25,11 @@ $(document).ready(function(){
                 // delete the pelicula row on html page
                 let row_id = "tr_" + odontologoId;
                 $("#" + row_id).remove();
-                $("#div_pelicula_updating").css({"display": "none"});
+                $("#div_odontologo_updating").css({"display": "none"});
             },
             error: function(error){
                 console.log(error);
-                $("#div_pelicula_updating").css({"display": "none"});
+                $("#div_odontologo_updating").css({"display": "none"});
                 alert("Error -> " + error);
             }
         });

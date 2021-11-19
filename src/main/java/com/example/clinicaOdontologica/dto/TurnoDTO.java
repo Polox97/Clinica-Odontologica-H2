@@ -10,7 +10,7 @@ import java.sql.Time;
 
 @Getter @Setter
 public class TurnoDTO {
-    private Integer id;
+    private Long id;
     private Paciente paciente;
     private Odontologo odontologo;
     private String fecha;

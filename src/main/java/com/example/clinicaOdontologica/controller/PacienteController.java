@@ -17,24 +17,24 @@ public class PacienteController {
     IPacienteService pacienteService;
 
     @PostMapping()
-    public ResponseEntity<?> addOdontologo(@RequestBody PacienteDTO p) {
+    public ResponseEntity<?> addPaciente(@RequestBody PacienteDTO p) {
         pacienteService.crearPaciente(p);
         return ResponseEntity.ok(HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
-    public PacienteDTO getOdontologo(@PathVariable Long id) {
+    public PacienteDTO getPaciente(@PathVariable Long id) {
         return pacienteService.buscarPaciente(id);
     }
 
     @PutMapping()
-    public ResponseEntity<?> modifyStudent(@RequestBody PacienteDTO p) {
+    public ResponseEntity<?> actualizarPaciente(@RequestBody PacienteDTO p) {
         pacienteService.actualizarPaciente(p);
         return ResponseEntity.ok(HttpStatus.OK);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> removeStudent(@PathVariable Long id) {
+    public ResponseEntity<?> removePaciente(@PathVariable Long id) {
 
         ResponseEntity<String> response = null;
 

@@ -22,9 +22,8 @@ public class TurnoService implements ITurnoService{
     ObjectMapper mapper;
 
     @Override
-    public void crearTurno(TurnoDTO t) {
-        Turno turno = mapper.convertValue(t, Turno.class);
-        turnoRepository.save(turno);
+    public void crearTurno(Turno t) {
+        turnoRepository.save(t);
     }
 
     @Override

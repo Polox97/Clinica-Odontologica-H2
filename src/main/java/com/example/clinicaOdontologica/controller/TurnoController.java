@@ -1,7 +1,10 @@
 package com.example.clinicaOdontologica.controller;
 
 import com.example.clinicaOdontologica.dto.TurnoDTO;
-import com.example.clinicaOdontologica.service.ITurnoService;
+import com.example.clinicaOdontologica.model.Turno;
+import com.example.clinicaOdontologica.service.IOdontologoService;
+import com.example.clinicaOdontologica.service.IPacienteService;
+import com.example.clinicaOdontologica.service.TurnoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,12 +17,16 @@ import java.util.Collection;
 public class TurnoController {
 
     @Autowired
-    ITurnoService turnoService;
+    TurnoService turnoService;
+    @Autowired
+    private IPacienteService pacienteService;
+    @Autowired
+    private IOdontologoService odontologoService;
 
     @PostMapping()
-    public ResponseEntity<?> addTurno(@RequestBody TurnoDTO t){
+    public ResponseEntity<?> addTurno(@RequestBody Turno t){
         turnoService.crearTurno(t);
-        return ResponseEntity.ok(HttpStatus.OK);
+        return ResponseEntity.ok((HttpStatus.OK));
     }
 
     @GetMapping("/{id}")
